@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-theme="codex">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex for Chrome</title>
+    <link rel="stylesheet" href="ui.css">
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-line">
+        <div class="product">
+          <div class="codex-mark" aria-hidden="true">C</div>
+          <div>
+            <h1>Codex</h1>
+            <p id="statusText">Checking connection...</p>
+          </div>
+        </div>
+        <button class="icon-button" id="settingsButton" title="Settings" aria-label="Settings">...</button>
+      </header>
+
+      <section class="hero-panel">
+        <span class="pill" id="connectionPill"><span class="dot warn"></span>Not signed in</span>
+        <h2>Use Codex in Chrome</h2>
+        <p>Connect your Codex account, inspect signed-in pages, and start browser tasks with site-level approvals.</p>
+        <div class="actions">
+          <button class="btn primary" id="signInButton">Sign in with Codex</button>
+          <button class="btn secondary" id="inspectButton">Inspect tab</button>
+        </div>
+      </section>
+
+      <section class="task-card">
+        <div class="task-head">
+          <h3>New browser task</h3>
+          <span id="hostLabel">No tab selected</span>
+        </div>
+        <textarea class="field" id="prompt" rows="5" placeholder="Ask Codex to work in the current Chrome tab..."></textarea>
+        <button class="btn primary" id="startTaskButton">Start task</button>
+      </section>
+
+      <section class="activity" aria-live="polite">
+        <h3>Activity</h3>
+        <div id="activityLog" class="activity-log">
+          <p>Sign in, inspect a tab, then start a task.</p>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

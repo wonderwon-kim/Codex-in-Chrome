@@ -1,0 +1,9 @@
+{
+  "name": "com.openai.codex_chrome",
+  "description": "Codex Chrome native messaging bridge",
+  "path": "C:\\\\absolute\\\\path\\\\to\\\\node-host.cmd",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://YOUR_EXTENSION_ID/"
+  ]
+}

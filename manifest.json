@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "Codex in Chrome",
+  "short_name": "Codex",
+  "description": "Use Codex from a Chrome side panel for browser tasks that need your signed-in Chrome profile.",
+  "version": "1.0.0",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "activeTab",
+    "sidePanel",
+    "storage",
+    "identity",
+    "nativeMessaging",
+    "tabs",
+    "tabGroups",
+    "windows",
+    "scripting",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "commands": {
+    "toggle-side-panel": {
+      "description": "Toggle Codex side panel",
+      "suggested_key": {
+        "default": "Ctrl+E",
+        "mac": "Command+E"
+      }
+    }
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "action": {
+    "default_title": "Codex",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "128": "icon-128.png"
+    }
+  },
+  "options_page": "src/options.html",
+  "side_panel": {
+    "default_path": "src/sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

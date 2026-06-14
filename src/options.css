@@ -1,0 +1,133 @@
+.settings {
+  width: min(860px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+h1,
+h2,
+p,
+dl {
+  margin: 0;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+header p,
+dd {
+  color: var(--muted);
+}
+
+.panel {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  margin-bottom: 14px;
+}
+
+.panel h2 {
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 8px;
+  font-size: 13px;
+}
+
+dt {
+  font-weight: 700;
+}
+
+.host-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.service-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.service-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.service-form button {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+.field {
+  min-height: 40px;
+  padding: 0 10px;
+}
+
+.host-form + .host-form {
+  margin-top: 10px;
+}
+
+h3 {
+  margin: 16px 0 0;
+  font-size: 13px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.host-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 8px 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-2);
+  font-size: 12px;
+}
+
+.host-chip button {
+  width: 22px;
+  height: 22px;
+  border-radius: 99px;
+  background: var(--accent-soft);
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+@media (max-width: 640px) {
+  dl,
+  .host-form,
+  .service-form {
+    grid-template-columns: 1fr;
+  }
+}

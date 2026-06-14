@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="codex">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex Chrome Settings</title>
+    <link rel="stylesheet" href="ui.css">
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="settings">
+      <header>
+        <div class="codex-mark">C</div>
+        <div>
+          <h1>Codex Chrome Settings</h1>
+          <p>Manage website approvals and production connection status.</p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <h2>Service configuration</h2>
+        <dl id="configStatus"></dl>
+        <form id="serviceForm" class="service-form">
+          <label>Authorization endpoint<input class="field" id="authorizationEndpoint" placeholder="https://.../authorize"></label>
+          <label>Token endpoint<input class="field" id="tokenEndpoint" placeholder="https://.../token"></label>
+          <label>Revocation endpoint<input class="field" id="revocationEndpoint" placeholder="https://.../revoke"></label>
+          <label>Client ID<input class="field" id="clientId" placeholder="codex-chrome-client"></label>
+          <label>Scope<input class="field" id="scope" placeholder="openid profile email codex.chrome"></label>
+          <label>API base URL<input class="field" id="apiBaseUrl" placeholder="https://..."></label>
+          <label>Task path<input class="field" id="taskPath" placeholder="/v1/chrome/tasks"></label>
+          <label>Native host<input class="field" id="nativeHost" placeholder="com.openai.codex_chrome"></label>
+          <label>Task transport
+            <select class="field" id="taskTransport">
+              <option value="native-first">Native first, API fallback</option>
+              <option value="native">Native only</option>
+              <option value="api">API only</option>
+            </select>
+          </label>
+          <button class="btn primary" type="submit">Save service config</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Website access</h2>
+        <form id="hostForm" class="host-form">
+          <input class="field" id="hostInput" placeholder="example.com">
+          <button class="btn primary" type="submit">Allow host</button>
+        </form>
+        <form id="blockHostForm" class="host-form">
+          <input class="field" id="blockHostInput" placeholder="sensitive.example.com">
+          <button class="btn secondary" type="submit">Block host</button>
+        </form>
+        <h3>Allowed hosts</h3>
+        <div class="list" id="allowedHosts"></div>
+        <h3>Blocked hosts</h3>
+        <div class="list" id="blockedHosts"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Risk controls</h2>
+        <label><input type="checkbox" id="alwaysAllowBrowserContent"> Always allow browser content</label>
+        <label><input type="checkbox" id="historyAccessAllowed"> Allow request-scoped browser history access</label>
+      </section>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

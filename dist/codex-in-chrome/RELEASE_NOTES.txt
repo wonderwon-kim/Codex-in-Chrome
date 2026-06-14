@@ -1,0 +1,4 @@
+Codex in Chrome
+
+Runtime extension package.
+Configure OAuth, API, and native host settings from the extension options page before production use.
